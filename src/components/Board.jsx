@@ -1,5 +1,6 @@
 import React from 'react';
 import Tile from './Tile';
+import './Board.css'
 
 function Board() {
   const letters = {
@@ -9,16 +10,19 @@ function Board() {
   }
      
   return (
-    <div>
-      {
-        Object.keys(letters).map(item => (
-          <Tile 
-            type={(item === "Enter" || item === "Delete") ? "enter-del" : "letter" }
-            letter={item}
-            point={letters[item]}
-          />
-        ))
-      }
+    <div className="board">
+      <section className="row1">
+        {
+          Object.keys(letters).map((item, index) => (
+            <Tile 
+              type={(item === "Enter" || item === "Delete") ? "enter-del" : "letter" }
+              letter={item}
+              point={letters[item]}
+              key={index}
+            />
+          ))
+        }
+      </section>
     </div>
   )
 }

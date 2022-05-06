@@ -1,0 +1,13 @@
+.board {
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid var(--primary-color);
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
