@@ -1,7 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap');
 
 .App {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px 20px;
   max-width: 1000px;
   height: 100vh;
-  margin: 0 auto;
-  padding: 20px;
+  max-height: 800px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8em;
+  font-weight: 800;
+}
+
+@media only screen and (max-width: 738px) {
+  .keyboard {
+    bottom: 20px;
+    max-width: 330px !important;
+    gap: 7px !important;
+    transform: scale(1.7);
+  }
+  .tile {
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 4px !important;
+  }
+
+  .tile__letter {
+    font-size: 0.8em !important;
+  }
+  
+  .tile__point {
+    font-size: 0.3em !important;
+    bottom: 2px !important;
+    right: 3px !important;
+  } 
+  
+  .tile:nth-child(20),
+  .tile:nth-child(28) {
+    font-size: 0.8em !important;
+    width: 45px !important;
+  }
+}
+  
+@media only screen and (max-width: 580px) {
+  .input-container {
+    margin-top: 70px !important;
+  }
+
+  .keyboard {
+    transform: scale(1.4);
+  }
+}
+
+@media only screen and (max-width: 459px) {
+  .keyboard {
+    transform: scale(1.15);
+    }
+}
+ 
+@media only screen and (max-width: 360px) {
+  .tile:nth-child(20),
+  .tile:nth-child(28) {
+    font-size: 0.8em !important;
+    width: 40px !important;
+  }
+}
+ 
+@media only screen and (min-height: 800px) {
+  .input-container {
+    margin-top: 100px !important;
+  }
+  .keyboard {
+    margin-top: 150px !important
+  }
 }

@@ -6,11 +6,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--primary-color);
 }
 
 .input-container__count {
     color: var(--bg-color-light);
-    font-size: 5rem;
+    font-size: 7em;
+    margin-bottom: 10px;
 }
 
 .target {
@@ -22,6 +24,7 @@
 
 .target__text {
     margin-right: 10px;
+    font-size: 1.4em;
 }
 
 .target__value {
@@ -33,6 +36,7 @@
     justify-content: center;
     background-color: var(--bg-color-light);
     border-radius: 50%;
+    font-size: 1.5em;
 }
 
 .input {
@@ -49,12 +53,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    width: 43px;
     height: 45px;
     font-size: 1.2rem;
 }
 
 .input-filled {
-    color: var(--bg-color);
+    color: var(--secondary-color);
     background-color: var(--primary-color);
 }

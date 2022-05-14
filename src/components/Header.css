@@ -1,33 +1,32 @@
 .header {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    font-size: 0.9rem;
-}
-
-.header__logo {
-    width: 40px;
-    transform: translateX(50%);
+    justify-content: space-around;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
 .help {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
-.help__count {
-    margin-bottom: 10px;
-}
+
 .help__icon {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #9C7E6C;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
     border-radius: 50%;
+    background-color: var(--bg-color-light);
     cursor: pointer;
 }
 
+.app-logo {
+    width: 50px;
+    transform: translateX(40%);
+}
