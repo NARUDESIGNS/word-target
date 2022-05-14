@@ -1,14 +1,14 @@
 import './App.css';
 import Header from './components/Header';
 import Input from './components/Input';
-import Board from './components/Board'
+import Keyboard from './components/Keyboard'
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Input />
-      <Board />
+      <Keyboard />
     </div>
   );
 }

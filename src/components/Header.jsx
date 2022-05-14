@@ -6,13 +6,13 @@ function Header({help, score}) {
   return (
     <div className="header">
         <section className="help">
-            <p className="help__count">HELP: {help || 2}</p>
+            <h3 className="help__count">HELP: {help || 2}</h3>
             <span className="help__icon">?</span>
         </section>
 
-        <img className="header__logo" src={logo} alt="logo"/>
+        <img className="app-logo" src={logo} alt="logo"/>
 
-        <p className="header__score">SCORE: {score || 120}</p>
+        <h3 className="score">SCORE: {score || 120}</h3>
     </div>
   )
 }
