@@ -1,9 +1,10 @@
 import React from 'react'
 import './Tile.css'
 
-function Tile({type, letter, point}){
+function Tile({handleClick, type, letter, point}){
+
   return (
-    <div className="tile">
+    <div className="tile" onClick={() => handleClick(letter)}>
         {
           type === 'enter-del' ?
             <p className="enter-del">{letter}</p> :
