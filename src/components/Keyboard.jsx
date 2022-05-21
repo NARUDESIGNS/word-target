@@ -3,7 +3,6 @@ import Tile from './Tile';
 import './Keyboard.css'
 
 function Board({handleClick, letters}) {
-
   return (
     <div className="keyboard">
       {

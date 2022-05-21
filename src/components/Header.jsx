@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../wt-logo.jpg'
+import logo from '../assets/wt-logo.jpg'
 import './Header.css'
 
 function Header({revealWord, helpCount, score}) {

@@ -8,7 +8,7 @@ import { useEffect, useState, useRef } from 'react';
 function App() {
   const [word, setWord] = useState('');
   const [showWord, setShowWord] = useState(false);
-  const [helpCount, setHelpCount] = useState(3);
+  const [helpCount, setHelpCount] = useState(5);
   const [target, setTarget] = useState(0);
   const [inputScoreCount, setInputScoreCount] = useState(0);
   const [input, setInput] = useState([]);
@@ -22,14 +22,12 @@ function App() {
   // evaluate input
   const evaluateInput = (decision) => {
     if (decision) {
-      console.log('correct answer');
       inputEl.current.classList.add('blink');
       setTimeout(() => inputEl.current.classList.remove('blink'), 1000);
       setScore(prevScore => prevScore + target);
       setTimeout(() => createChallenge(), 1200);
     }
     else {
-      console.log('wrong answer');
       inputEl.current.classList.add('shake');
       setTimeout(() => inputEl.current.classList.remove('shake'), 500);
       setTimeout(() => {
@@ -38,9 +36,6 @@ function App() {
       }, 1200);
     }
   }
-
-  // award help counts
-  if (score > 50 ) setHelpCount()
   
   // generate new challenge
   const createChallenge = () => {
@@ -57,6 +52,14 @@ function App() {
     setTarget(targetValue);
     setShowWord(false);
   }  
+
+  //listen to keyboard events
+  const onkeydown = (e) => {
+    const key = e.key.toUpperCase();
+    if (key === 'ENTER') handleClick('Enter');
+    else if (key === 'BACKSPACE') handleClick('Delete');
+    else if (letters[key]) handleClick(key);
+  }
 
   // handle keyboard click
   const handleClick = (value) => {
@@ -97,7 +100,7 @@ function App() {
       if (inputScoreCount === target){
         fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input.join('')}`)
         .then(res => res.json())
-        .then(data => evaluateInput(data[0].word === input.join('').toLocaleLowerCase()))
+        .then(data => evaluateInput(data[0].word === input.join('').toLowerCase()))
         .catch(err => {
           console.log(err.message);
           if (err.message === 'Failed to fetch') alert('No internet connection!');
@@ -128,12 +131,14 @@ function App() {
     // handle click when user types with keyboard
     // window.addEventListener('keydown', (e) => {
     //   handleClick(e.key.toUpperCase());
+    //   // if (e.key === 'Enter') handleClick('Enter');
     // });
+
   }, []); 
 
    
   return (
-    <div className="App">
+    <div className="App" onKeyDown={onkeydown} tabIndex="0">
       <Header revealWord={revealWord} helpCount={helpCount} score={score}/>
       <Input
         inputBoxes={input}
