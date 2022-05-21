@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Word Target",
+  "name": "Word Target Game React App",
+  "description": "A word game which gives you a target and expects you to spell a word to meet the set target.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +9,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logo.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }
