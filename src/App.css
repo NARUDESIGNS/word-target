@@ -30,7 +30,7 @@
     transform: scale(1.7);
   }
   .tile {
-    width: 26px !important;
+    width: 25px !important;
     height: 40px !important;
     border-radius: 4px !important;
   }
