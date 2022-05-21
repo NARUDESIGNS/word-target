@@ -31,7 +31,7 @@
   }
   .tile {
     width: 26px !important;
-    height: 35px !important;
+    height: 40px !important;
     border-radius: 4px !important;
   }
 
@@ -40,7 +40,7 @@
   }
   
   .tile__point {
-    font-size: 0.1em !important;
+    font-size: 7px !important;
     bottom: 2px !important;
     right: 3px !important;
   } 
