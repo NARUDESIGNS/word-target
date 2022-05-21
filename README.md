@@ -4,7 +4,7 @@
 This game is almost similar to the way you spell words on Scrabble. <br>
 It provides you with letters also called Tiles. Each tile has a point. <br>
 The game gives you a target and the length of characters of the word it expects you to spell. <br>
-It uses [Free Dictionary API](https://dictionaryapi.dev/) to validate the word you spell and determine whether or not it is accepted. <br>
+It uses [Free Dictionary API](https://dictionaryapi.dev/) (S/O to @meetDeveloper) to validate the word you spell and determine whether or not it is accepted. <br>
 
 # Contributing to this project
 You are very welcome to contribute to this project. Please create a different branch for your contribution describing the feature or bug you want to fix, for example `fixes-tile-error` and then create a PR.
