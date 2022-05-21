@@ -127,13 +127,6 @@ function App() {
   
   useEffect(() => {
     createChallenge();
-
-    // handle click when user types with keyboard
-    // window.addEventListener('keydown', (e) => {
-    //   handleClick(e.key.toUpperCase());
-    //   // if (e.key === 'Enter') handleClick('Enter');
-    // });
-
   }, []); 
 
    

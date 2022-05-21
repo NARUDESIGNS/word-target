@@ -18,4 +18,4 @@ function Header({revealWord, helpCount, score}) {
   )
 }
 
-export default Header
+export default Header;

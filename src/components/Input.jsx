@@ -24,4 +24,4 @@ function Input({inputBoxes, inputScoreCount, isClicked, target, word, showWord, 
   )
 }
 
-export default Input
+export default Input;
