@@ -13,6 +13,7 @@ function App() {
   const [inputScoreCount, setInputScoreCount] = useState(0);
   const [input, setInput] = useState([]);
   const [score, setScore] = useState(0);
+  const [checkingInput, setCheckingInput] = useState(false);
   
   const wordsCopy = [...words];
   let randomWord;
@@ -51,6 +52,7 @@ function App() {
     setInputScoreCount(0);
     setTarget(targetValue);
     setShowWord(false);
+    setCheckingInput(false);
   }  
 
   //listen to keyboard events
@@ -59,11 +61,12 @@ function App() {
     if (key === 'ENTER') handleClick('Enter');
     else if (key === 'BACKSPACE') handleClick('Delete');
     else if (letters[key]) handleClick(key);
+    if (key === ' ') revealWord();
   }
 
   // handle keyboard click
   const handleClick = (value) => {
-    if (letters[value]){
+    if (letters[value] && !checkingInput){
       setInput(prevInput => {
         for (let i=0; i<word.length; i++) {
           if (!prevInput[i]) {
@@ -96,8 +99,9 @@ function App() {
     };
 
     // user clicks on enter
-    if (value === 'Enter' && input.every(item => item !== '')) {
-      if (inputScoreCount === target){
+    if (value === 'Enter' && input.every(item => item !== '' && !checkingInput)) {
+      if (inputScoreCount === target) {
+        setCheckingInput(true);
         fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input.join('')}`)
         .then(res => res.json())
         .then(data => evaluateInput(data[0].word === input.join('').toLowerCase()))
@@ -113,7 +117,7 @@ function App() {
 
   // user clicks on help icon
   const revealWord = () => {
-    if (helpCount > 0) {
+    if (helpCount > 0 && !showWord) {
       setShowWord(true);
       setHelpCount(prevCount => {
         if (prevCount > 0) {
@@ -144,7 +148,7 @@ function App() {
       />
       <Keyboard handleClick={handleClick} letters={letters} />
       <p className="madeby">Made with 🤍 by 
-        <a href="https://github.com/narudesigns" target="_blank" rel="noreferrer">Narudesigns</a>
+        <a href="https://github.com/narudesigns" target="_blank" rel="noreferrer"> Narudesigns</a>
       </p>
     </div>
   );
