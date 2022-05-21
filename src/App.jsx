@@ -127,6 +127,7 @@ function App() {
   
   useEffect(() => {
     createChallenge();
+    // eslint-disable-next-line
   }, []); 
 
    
