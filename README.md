@@ -1,4 +1,4 @@
-![](./assets/word-target.png)
+![](./src/assets/word-target.png)
 
 # Word Target
 This game is almost similar to the way you spell words on Scrabble. <br>
