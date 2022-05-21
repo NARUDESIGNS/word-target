@@ -1,7 +1,8 @@
 const words = [
-    'HAZE', 'GRILL', 'DAMN', 'PILL', 'DEALS', 'OVER', 'EXIT', 'AXIS', 'DRUNK', 'KNEE',
-    'PONDER', 'PRIME', 'ELUDE', 'GORY', 'SKYE', 'ZIP', 'ZOOM', 'DRILLS', 'GEEK', 'FEED',
-    'NOBLE', 'SOUR', 'BIRD', 'ACHE', 'NOTE', 'ESCAPE', 'EXCUSE', 'FICKLE', 'DREAM', 'BLEED',
+    'HAZE', 'GRILL', 'DAMN', 'PILLS', 'DEALS', 'OVER', 'EXIT', 'AXIS', 'DRUNK', 'KNEE',
+    'DIZZY', 'QUITE', 'STACK', 'BUZZ', 'STUCK', 'VIOLIN', 'VERY', 'BUBBLE', 'FATHER', 'JAIL',
+    'PONDER', 'PRIME', 'ELUDE', 'GORY', 'SKYE', 'ZIP', 'ZOOM', 'DRILLS', 'GEEK', 'FLOAT',
+    'NOBLE', 'COZY', 'BIRD', 'ACHE', 'NUMBER', 'ESCAPE', 'EXCUSE', 'FICKLE', 'DREAM', 'BLEED',
     'OZONE', 'BARTER', 'COUCH', 'CRINGE', 'JOT', 'LOVE', 'CLOCK', 'KNOCK', 'KING', 'EVADE',
     'BREATH', 'VAGUE', 'VOUCH', 'OPINE', 'FLEET', 'WOKE', 'WORRY', 'VANISH', 'VOTE', 'VIM'
 ];
