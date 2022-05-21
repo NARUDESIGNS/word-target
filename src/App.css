@@ -13,6 +13,14 @@
   font-weight: 800;
 }
 
+.madeby {
+  color: var(--primary-color);
+  margin-top: 40px;
+}
+.madeby a {
+  color: var(--primary-color);
+}
+
 @media only screen and (max-width: 738px) {
   .keyboard {
     bottom: 20px;

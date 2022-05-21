@@ -62,3 +62,29 @@
     color: var(--secondary-color);
     background-color: var(--primary-color);
 }
+
+.shake {
+    animation: shake 0.05s linear 8 alternate;
+}
+
+@keyframes shake {
+    from {
+        transform: translateX(-10%);
+    }
+    to {
+        transform: translateX(10%);
+    }
+}
+
+.blink {
+    animation: blink 0.1s linear 24 alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
