@@ -19,6 +19,7 @@ function App() {
   let randomWord;
   
   const inputEl = useRef();
+  const app = useRef();
 
   // evaluate input
   const evaluateInput = (decision) => {
@@ -34,7 +35,7 @@ function App() {
       setTimeout(() => {
         setInput(Array(word.length).fill(''))
         setInputScoreCount(0);
-      }, 1200);
+      }, 1000);
     }
   }
   
@@ -131,12 +132,13 @@ function App() {
   
   useEffect(() => {
     createChallenge();
+    app.current.focus();
     // eslint-disable-next-line
   }, []); 
 
    
   return (
-    <div className="App" onKeyDown={onkeydown} tabIndex="0">
+    <div className="App" onKeyDown={onkeydown} tabIndex="0" ref={app}>
       <Header revealWord={revealWord} helpCount={helpCount} score={score}/>
       <Input
         inputBoxes={input}
