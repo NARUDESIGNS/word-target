@@ -77,10 +77,10 @@ function App() {
         }
         return [...prevInput]
       }); 
+      // conpute score
+      if (letters[value] && input.some(item => item === '')) setInputScoreCount(prevScore => prevScore + letters[value]);
     }
 
-    // conpute score
-    if (letters[value] && input.some(item => item === '')) setInputScoreCount(prevScore => prevScore + letters[value]);
 
     // delete input
     if (value === 'Delete' && input.some(item => item !== '')) {
