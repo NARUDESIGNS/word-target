@@ -26,14 +26,13 @@ function App() {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input.join('').toLocaleLowerCase()}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if (data.title) evaluateInput(false); 
         else evaluateInput(data[0].word === input.join('').toLowerCase());
       })
       .catch(err => {
         if (err.message === 'Failed to fetch') alert('No internet connection!');
         else evaluateInput(false);
-        console.log(err.message);
+        throw new Error(err);
       });
   }
 
@@ -143,7 +142,6 @@ function App() {
     const abortController = new AbortController()
 
     if (checkingInput) {
-      console.log('checking :' + checkingInput);
       getData(input);
     }
 
