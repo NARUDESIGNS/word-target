@@ -32,7 +32,7 @@ function App() {
       .catch(err => {
         if (err.message === 'Failed to fetch') alert('No internet connection!');
         else evaluateInput(false);
-        throw new Error(err);
+        console.log(err.message);
       });
   }
 
@@ -146,6 +146,7 @@ function App() {
     }
 
     return () => abortController.abort();
+    // eslint-disable-next-line
   }, [checkingInput]);
   
   useEffect(() => {
