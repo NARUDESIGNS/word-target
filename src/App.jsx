@@ -21,6 +21,22 @@ function App() {
   const inputEl = useRef();
   const app = useRef();
 
+  // fetch data
+  function getData(input) {
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input.join('').toLocaleLowerCase()}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.title) evaluateInput(false); 
+        else evaluateInput(data[0].word === input.join('').toLowerCase());
+      })
+      .catch(err => {
+        if (err.message === 'Failed to fetch') alert('No internet connection!');
+        else evaluateInput(false);
+        console.log(err.message);
+      });
+  }
+
   // evaluate input
   const evaluateInput = (decision) => {
     if (decision) {
@@ -35,6 +51,7 @@ function App() {
       setTimeout(() => {
         setInput(Array(word.length).fill(''))
         setInputScoreCount(0);
+        setCheckingInput(false);
       }, 1000);
     }
   }
@@ -103,14 +120,6 @@ function App() {
     if (value === 'Enter' && input.every(item => item !== '' && !checkingInput)) {
       if (inputScoreCount === target) {
         setCheckingInput(true);
-        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input.join('')}`)
-        .then(res => res.json())
-        .then(data => evaluateInput(data[0].word === input.join('').toLowerCase()))
-        .catch(err => {
-          console.log(err.message);
-          if (err.message === 'Failed to fetch') alert('No internet connection!');
-          else evaluateInput(false);
-        });
       } else evaluateInput(false);
     }
   }
@@ -129,6 +138,17 @@ function App() {
     }
   }
   
+  // Call API
+  useEffect(() => {
+    const abortController = new AbortController()
+
+    if (checkingInput) {
+      console.log('checking :' + checkingInput);
+      getData(input);
+    }
+
+    return () => abortController.abort();
+  }, [checkingInput]);
   
   useEffect(() => {
     createChallenge();
