@@ -58,7 +58,6 @@ function App() {
   const createChallenge = () => {
     const randomIndex = Math.round(Math.random() * wordsCopy.length - 1);
     randomWord = wordsCopy.splice(randomIndex, 1).toString();
-    console.log(randomWord, wordsCopy.length);
     // compute target
     let targetValue = 0;
     randomWord.split('').forEach(item => {
