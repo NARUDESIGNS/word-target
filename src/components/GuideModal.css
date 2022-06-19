@@ -16,7 +16,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bolder;
     position: absolute;
     top: 20px;
@@ -62,6 +62,8 @@
     }
     .dim__close-btn {
         right: 5%;
+        padding: 7px 14px;
+        font-weight: normal;
     }
     .modal {
         padding: 15px;
