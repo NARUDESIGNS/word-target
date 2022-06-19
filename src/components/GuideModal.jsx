@@ -19,16 +19,16 @@ function GuideModal() {
                   <h1 className="modal__header">HOW TO PLAY</h1>
                   <h2>Introduction</h2>
                   <p>
-                      This is a simple word game inspired by scrabble and wordle. <br />
+                      This is a simple word game inspired by Scrabble and Wordle. <br />
                       You are presented with a <b> help button, score counter, score calculator, target score, blank boxes,</b> and <b>keyboard with tiles</b> <br />
                   </p>
                   <img src={guide} alt="Application guide snapshot" />
                   <h2>The Goal</h2>
                   <p>
-                      The goal is to <b>spell a word</b> (using the tiles) with letters <b>that fills all the blank boxes</b> and also combines it score points <b>to meet the target.</b>
-                      For example, if you have <b>4 blank boxes</b> and <b>target score of 9</b>, your goal is to spell a 4 letter word and the score points of the letters used must add up to give the target. <br />
-                      A valid word for this challenge is <b>KING</b>. This solution is accepted because: <br />
+                    The goal is to <b>spell a word</b> (using the tiles) with letters <b>that fills all the blank boxes</b> and also combines its score points <b>to meet the target.</b> <br />
+                    For example, if you have <b>4 blank boxes</b> and <b>target score of 9</b>, your goal is to spell a 4 letter word and the score points of the letters used must add up to give the target. <br />
                   </p>
+                    <p className="valid-word">A valid word for this challenge is <b>KING</b>. This solution is accepted because:</p> 
                   <ul>
                       <li>The word exists in the dictionary.</li>
                       <li>It fills up all the blank boxes.</li>

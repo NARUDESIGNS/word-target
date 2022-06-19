@@ -52,6 +52,9 @@
 .modal__header, .modal ul, .modal p {
     margin-bottom: 20px;
 }
+.modal .valid-word {
+    margin-bottom: 0;
+}
 .modal p, .modal li {
     text-align: left;
 }
