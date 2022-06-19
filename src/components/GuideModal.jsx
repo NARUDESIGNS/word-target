@@ -25,7 +25,7 @@ function GuideModal() {
                   <img src={guide} alt="Application guide snapshot" />
                   <h2>The Goal</h2>
                   <p>
-                      The goal is to <b>spell a word</b> (using the tiles) with letters that <b>fills all the blank boxes</b> and also combines it score points <b>to meet the target.</b>
+                      The goal is to <b>spell a word</b> (using the tiles) with letters <b>that fills all the blank boxes</b> and also combines it score points <b>to meet the target.</b>
                       For example, if you have <b>4 blank boxes</b> and <b>target score of 9</b>, your goal is to spell a 4 letter word and the score points of the letters used must add up to give the target. <br />
                       A valid word for this challenge is <b>KING</b>. This solution is accepted because: <br />
                   </p>
