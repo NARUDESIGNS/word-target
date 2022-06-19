@@ -1,0 +1,70 @@
+
+.dim {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .7);
+}
+.dim__close-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bolder;
+    position: absolute;
+    top: 20px;
+    right: 20%;
+    z-index: 20;
+    cursor: pointer;
+    box-shadow: 0 10px 10px rgba(0,0,0, .3);
+}
+.dim__close-btn:hover {
+    opacity: .9;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 60%;
+    padding: 30px 50px;
+    background-color: var(--primary-color);
+    overflow-y: scroll;
+    color: var(--secondary-color);
+    line-height: 2;
+    font-weight: 100;
+    border-radius: 5px;
+}
+.modal img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.modal__header, ul, p {
+    margin-bottom: 20px;
+}
+.modal p, .modal li {
+    text-align: left;
+}
+
+@media only screen and (max-width: 900px) {
+    .dim {
+        padding: 15px;
+    }
+    .dim__close-btn {
+        right: 5%;
+    }
+    .modal {
+        padding: 15px;
+        width: 90%;
+    }
+}

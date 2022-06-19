@@ -1,9 +1,11 @@
 import './App.css';
+import GuideModal from './components/GuideModal';
 import Header from './components/Header';
 import Input from './components/Input';
 import Keyboard from './components/Keyboard';
 import {words, letters} from './data';
 import { useEffect, useState, useRef } from 'react';
+
 
 function App() {
   const [word, setWord] = useState('');
@@ -157,6 +159,7 @@ function App() {
    
   return (
     <div className="App" onKeyDown={onkeydown} tabIndex="0" ref={app}>
+      <GuideModal />
       <Header revealWord={revealWord} helpCount={helpCount} score={score}/>
       <Input
         inputBoxes={input}
