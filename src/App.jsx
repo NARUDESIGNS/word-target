@@ -17,6 +17,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [checkingInput, setCheckingInput] = useState(false);
   const [wordsCopy] = useState([...words]);
+  const [showLoader, setShowLoader] = useState(false);
   let randomWord;
   
   const inputEl = useRef();
@@ -24,13 +25,16 @@ function App() {
 
   // fetch data
   function getData(input) {
+    setShowLoader(true);
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input.join('').toLocaleLowerCase()}`)
-      .then(res => res.json())
-      .then(data => {
+    .then(res => res.json())
+    .then(data => {
+        setShowLoader(false);
         if (data.title) evaluateInput(false); 
         else evaluateInput(data[0].word === input.join('').toLowerCase());
       })
       .catch(err => {
+        setShowLoader(false);
         if (err.message === 'Failed to fetch') alert('No internet connection!');
         else evaluateInput(false);
         console.log(err.message);
@@ -94,7 +98,7 @@ function App() {
         }
         return [...prevInput]
       }); 
-      // conpute score
+      // compute score
       if (letters[value] && input.some(item => item === '')) setInputScoreCount(prevScore => prevScore + letters[value]);
     }
 
@@ -168,6 +172,7 @@ function App() {
         word={word}
         showWord={showWord}
         inputEl={inputEl}
+        showLoader={showLoader}
       />
       <Keyboard handleClick={handleClick} letters={letters} />
       <p className="madeby">Made with 🤍 by 

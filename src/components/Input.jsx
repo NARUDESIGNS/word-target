@@ -1,7 +1,7 @@
 import React from 'react'
 import './Input.css'
 
-function Input({inputBoxes, inputScoreCount, isClicked, target, word, showWord, inputEl}) {
+function Input({inputBoxes, inputScoreCount, isClicked, target, word, showWord, inputEl, showLoader}) {
     isClicked = false;
 
   return (
@@ -12,6 +12,7 @@ function Input({inputBoxes, inputScoreCount, isClicked, target, word, showWord, 
             <span className="target__value">{target}</span>
         </section>
         <section className="input" ref={inputEl}>
+          {showLoader && <span className='loader'></span>}
            {inputBoxes.map((item, value) => (
                <div className={`${item ? 'input-filled' : 'input-empty'}`} key={value}>
                    <p className="input-value">{item}</p>
